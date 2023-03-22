@@ -1,5 +1,5 @@
 import random
-print('Добро пожаловать в числовую угодайку!')
+print('Добро пожаловать в числовую угадайку!')
 def is_border_right(x):
 
     if x.isdigit() != True:
