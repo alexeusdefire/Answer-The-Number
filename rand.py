@@ -13,12 +13,12 @@ def is_border_right(x: str) -> bool:
     else:
         return True
 
-def is_answer_right(n: str) -> bool:
+def is_answer_right(answer: str) -> bool:
 
-    if n.isdigit() != True:
+    if answer.isdigit() != True:
         return False
 
-    elif int(n) > int(right) or int(n) < 1:
+    elif int(answer) > int(right) or int(answer) < 1:
         return False
 
     else:
@@ -36,21 +36,21 @@ def the_game():
     counter = 0
 
     while True:
-        n = input('Введите число от 1 до ' + right + '.\n')
+        answer = input('Введите число от 1 до ' + right + '.\n')
 
-        while is_answer_right(n) != True:
-            n = input('А может быть всё-таки введём целое число от 1 до ' + right + '?\n')
+        while is_answer_right(answer) != True:
+            answer = input('А может быть всё-таки введём целое число от 1 до ' + right + '?\n')
 
-        n = int(n)
+        answer = int(answer)
         counter += 1
 
-        if n < randnumb:
+        if answer < randnumb:
             print('Ваше число меньше, чем то, которое я загадал\n')
 
-        elif n > randnumb:
+        elif answer > randnumb:
             print('Ваше число больше, чем то, которое я загадал\n')
 
-        elif n == randnumb:
+        elif answer == randnumb:
             restart = input('Вы угадали, поздравляю! Количество попыток: ' + str(counter) + '. Не хотите попробовать ещё? Напишите "да" или "нет"\n')
 
             while restart.lower() != 'да' and restart.lower() != 'нет':
