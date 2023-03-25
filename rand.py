@@ -2,7 +2,6 @@ import random
 
 print('Добро пожаловать в числовую угадайку!')
 
-
 def is_border_right(x: str) -> bool:
 
     if x.isdigit() != True:
